@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <title>ACME Car Rental</title>
+  </head>
+  <body style="padding: 3rem;"">
+    <header>
+      <h1>ACME Car Rental</h1>
+    </header>
+    <main >
+      <!-- ACME Car Rental form -->
+      <form>
+        <!-- Pickup Info -->
+        <div>
+          <label for="pickupInput">Pickup date:</label>
+          <input type="date" id="pickupInput" />
+        </div>
+        <div>
+          <label for="numberOfDays">Number of days:</label>
+          <input type="number" id="numberOfDays" />
+        </div>
+
+        <!-- Options -->
+        <div>
+          <p>Options</p>
+          <div>
+            <input type="checkbox" name="checkbox" id="tolls" value="3.95" />
+            <label for="tolls">Electronic Toll Tag ($3.95/day)</label>
+          </div>
+          <div>
+            <input type="checkbox" name="checkbox" id="gps" value="2.95" />
+            <label for="gps">GPS ($2.95/day)</label>
+          </div>
+          <div>
+            <input type="checkbox" name="checkbox" id="assistance" value="2.95" />
+            <label for="assistance">Roadside Assistance ($2.95/day)</label>
+          </div>
+        </div>
+
+        <!-- Age  -->
+        <div>
+          <p>Under 25</p>
+          <input type="radio" name="radio-option" id="noChecked" required />
+          <label for="noChecked">No</label>
+          <input type="radio" name="radio-option" id="yesChecked" required />
+          <label for="yesChecked">Yes</label>
+        </div>
+
+        <!-- Submit Info -->
+        <button type="button" id="totalCost" style="margin-top: 1rem" onclick="calculateCarRental()">
+          Estimate Total Cost
+        </button>
+
+        <!-- Cost Displayed -->
+        <div>
+          <p id="rentTotal">Car Rental: $xx.xx</p>
+          <p id="optionTotal">Options: $xx.xx</p>
+          <p id="surchargeTotal">Under 25 surcharge: $xx.xx</p>
+
+          <p id="finalAmount">Total due: $xx.xx</p>
+        </div>
+      </form>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
